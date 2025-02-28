@@ -7,3 +7,9 @@ themeBtn.addEventListener("click",function(){
     const randomColor=`#${randomCode}`;
     body.classList.add(`bg-[${randomColor}]`)
 })
+const completeButtons=document.querySelectorAll(".complete-btn");
+for (const completeButton of completeButtons) {
+    completeButton.addEventListener("click",function(even){
+        
+    })
+}
