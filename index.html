@@ -42,18 +42,28 @@
     </script>
 </head>
 
-<body class="font-primary max-w-7xl mx-auto">
-    <section class=" my-3 max-w-6xl shadow-sm mx-auto rounded-lg border border-bordercolor">
-        <nav class="p-3  ">
+<body id="body" class=" py-3 font-primary max-w-7xl mx-auto">
+    <section class="bg-white max-w-6xl shadow-sm mx-auto rounded-lg border border-bordercolor">
+        <nav class="p-3 flex justify-between  ">
             <!-- text and logo  -->
-             <div class="flex items-center gap-1">
+             <div class=" cursor-pointer flex items-center gap-1">
                 <!-- logo -->
                  <div class="w-10 h-10"><img src="./assets/logo.png" alt=""></div>
                  <div class=""><h3 class="text-xl">Dev<span class="font-bold">Board</span></h3></div>
              </div>
-             
+             <!-- two button  -->
+              <div class="flex gap-5">
+                <!-- count  -->
+                 <div class="bg-primary-bg rounded-xl flex items-center gap-1  px-2">
+                    <div class="w-5 h-5"><img src="./assets/checkbox.png" alt=""></div>
+                    <div class=""><h3 id="count-point" class="font-bold  ">25</h3></div>
+                 </div>
+                <!-- colors button -->
+                 <div class="rounded-full p-2 bg-primary-bg flex justify-center items-center"><button id="theme-btn" class=""><img src="./assets/theme-btn.png" alt=""></button></div>
+              </div>
         </nav>
     </section>
+ <script src="./js-file/script.js"></script>
 </body>
 
 </html>
