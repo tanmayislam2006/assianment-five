@@ -22,10 +22,10 @@ for (const completeButton of completeButtons) {
         changeInnerText("count-point", total);
         // added history
         const historyBody = document.getElementById("history-data");
-        const accessParent=even.target.parentNode.parentNode.parentNode;
-        const accesSpan=accessParent.childNodes[3].childNodes
+        const accessParent = even.target.parentNode.parentNode.parentNode;
+        const accesSpan = accessParent.childNodes[3].childNodes
         console.log(accesSpan);
-        const title=accesSpan[0].innerText
+        const title = accesSpan[0].innerText
         let now = new Date();
         let timeString = now.toLocaleTimeString();
         const divCreate = document.createElement('div');
@@ -51,4 +51,19 @@ const headerCard = document.getElementById("header-card");
 headerCard.addEventListener("click", function (event) {
     window.location.href = "../HTML-FILE/index.html"
 });
-
+function todayDate() {
+    const date = new Date();
+    //const days= [0,1,2,3,4,5,6]
+    const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+    let today = days[date.getDay()];
+    // const months=[0,1,2,3,4,5,6,7,8,9,10,11]
+    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JULY", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    // 01
+    let day = date.getDate();
+    let month = months[date.getMonth()];
+    let year = date.getFullYear();
+    let currentDay = `${day} ${month},${year}`
+    changeInnerText("day", today);
+    changeInnerText("date", currentDay);
+}
+todayDate();
