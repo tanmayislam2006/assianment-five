@@ -50,7 +50,7 @@ clearHistory.addEventListener("click", function (event) {
 })
 const headerCard = document.getElementById("header-card");
 headerCard.addEventListener("click", function (event) {
-    window.location.href = "../HTML-FILE/index.html"
+    window.location.href = "../blog.html"
 });
 function todayDate() {
     const date = new Date();
