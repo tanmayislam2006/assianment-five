@@ -10,32 +10,45 @@ themeBtn.addEventListener("click", function () {
 const completeButtons = document.querySelectorAll(".complete-btn");
 for (const completeButton of completeButtons) {
     completeButton.addEventListener("click", function (even) {
-        const taskCount = getElementByIdText("task-count");
-        const sum = Math.max(0, taskCount - 1);
-        changeInnerText("task-count", sum);
+        let taskCount = getElementByIdText("task-count");
+        taskCount = taskCount > 0 ? taskCount - 1 : taskCount;
+        // if (taskCount > 0) {
+        //     taskCount--;
+        // }
+        changeInnerText("task-count", taskCount);
         // total pblm
         const point = getElementByIdText("count-point");
         let total = point + 1;
         changeInnerText("count-point", total);
         // added history
         const historyBody = document.getElementById("history-data");
-        const cardTittle = document.getElementById("card-tittle-one").innerText;
+        const accessParent=even.target.parentNode.parentNode.parentNode;
+        const accesSpan=accessParent.childNodes[3].childNodes
+        console.log(accesSpan);
+        const title=accesSpan[0].innerText
         let now = new Date();
         let timeString = now.toLocaleTimeString();
         const divCreate = document.createElement('div');
         divCreate.innerHTML = `                <div class="my-3 bg-primary-bg p-2 text-gary-600 mx-2">
-                    <p class="">You have Complete The Task ${cardTittle} at ${timeString}</p>
+                    <p class="">You have Complete The Task ${title} at ${timeString}</p>
                 </div>`
         historyBody.appendChild(divCreate)
-        completeButton.setAttribute('disabled',true);
+        completeButton.setAttribute('disabled', true);
+        if (taskCount == 0) {
+            alert('Welcome You complete all the task ')
+        }
+
+
+
     })
 }
-const clearHistory=document.getElementById("clear-history");
-clearHistory.addEventListener("click",function(event){
-    const historyBody=document.getElementById("history-data");
-    historyBody.innerHTML=""
+const clearHistory = document.getElementById("clear-history");
+clearHistory.addEventListener("click", function (event) {
+    const historyBody = document.getElementById("history-data");
+    historyBody.innerHTML = ""
 })
-const headerCard=document.getElementById("header-card");
-headerCard.addEventListener("click",function(event){
-    window.location.href="../HTML-FILE/index.html"
-})
+const headerCard = document.getElementById("header-card");
+headerCard.addEventListener("click", function (event) {
+    window.location.href = "../HTML-FILE/index.html"
+});
+
