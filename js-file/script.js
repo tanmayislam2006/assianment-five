@@ -33,6 +33,7 @@ for (const completeButton of completeButtons) {
                     <p class="">You have Complete The Task ${title} at ${timeString}</p>
                 </div>`
         historyBody.appendChild(divCreate)
+        alert("Board Update Succesfully")
         completeButton.setAttribute('disabled', true);
         if (taskCount == 0) {
             alert('Welcome You complete all the task ')
