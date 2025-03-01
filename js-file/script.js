@@ -39,8 +39,6 @@ for (const completeButton of completeButtons) {
             alert('Welcome You complete all the task ')
         }
 
-
-
     })
 }
 const clearHistory = document.getElementById("clear-history");
