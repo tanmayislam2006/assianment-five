@@ -2,9 +2,11 @@
 const themeBtn = document.getElementById("theme-btn");
 themeBtn.addEventListener("click", function () {
     const body = document.getElementById("body");
-    const randomNumber = Math.floor(Math.random() *256)
-    const randomColor = `rgb(${randomNumber},${randomNumber},${randomNumber})`;
-    body.classList.add(`bg-[${randomColor}]`)
+    const r = Math.floor(Math.random() * 256)
+    const g = Math.floor(Math.random() * 256)
+    const b = Math.floor(Math.random() * 256)
+    const randomColor = `rgb(${r},${g},${b})`;
+    body.style.backgroundColor = randomColor
 })
 const completeButtons = document.querySelectorAll(".complete-btn");
 for (const completeButton of completeButtons) {
@@ -23,7 +25,6 @@ for (const completeButton of completeButtons) {
         const historyBody = document.getElementById("history-data");
         const accessParent = even.target.parentNode.parentNode.parentNode;
         const accesSpan = accessParent.childNodes[3].childNodes
-        console.log(accesSpan);
         const title = accesSpan[0].innerText
         let now = new Date();
         let timeString = now.toLocaleTimeString();
@@ -32,10 +33,10 @@ for (const completeButton of completeButtons) {
                     <p class="">You have Complete The Task ${title} at ${timeString}</p>
                 </div>`
         historyBody.appendChild(divCreate)
-        alert("Board Update Succesfully")
+        alert("Board Update Successfully")
         completeButton.setAttribute('disabled', true);
         if (taskCount == 0) {
-            alert('Welcome You complete all the task ')
+            alert('Welcome! You complete all the task ')
         }
 
     })
