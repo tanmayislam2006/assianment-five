@@ -48,7 +48,7 @@ clearHistory.addEventListener("click", function (event) {
 })
 const headerCard = document.getElementById("header-card");
 headerCard.addEventListener("click", function (event) {
-    window.location.href = "assianment-five/blogs.html";
+    window.location.href = "/blogs.html";
 });
 function todayDate() {
     const date = new Date();
