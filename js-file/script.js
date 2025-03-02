@@ -10,7 +10,7 @@ themeBtn.addEventListener("click", function () {
 })
 const completeButtons = document.querySelectorAll(".complete-btn");
 for (const completeButton of completeButtons) {
-    completeButton.addEventListener("click", function (even) {
+    completeButton.addEventListener("click", function (event) {
         let taskCount = getElementByIdText("task-count");
         taskCount = taskCount > 0 ? taskCount - 1 : taskCount;
         // if (taskCount > 0) {
@@ -23,7 +23,7 @@ for (const completeButton of completeButtons) {
         changeInnerText("count-point", total);
         // added history
         const historyBody = document.getElementById("history-data");
-        const accessParent = even.target.parentNode.parentNode.parentNode;
+        const accessParent = event.target.parentNode.parentNode.parentNode;
         const accesSpan = accessParent.childNodes[3].childNodes
         const title = accesSpan[0].innerText
         let now = new Date();
@@ -35,6 +35,7 @@ for (const completeButton of completeButtons) {
         historyBody.appendChild(divCreate)
         alert("Board Update Successfully")
         completeButton.setAttribute('disabled', true);
+        completeButton.innerText="Completed"
         if (taskCount == 0) {
             alert('Welcome! You complete all the task ')
         }
