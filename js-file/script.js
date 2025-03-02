@@ -2,9 +2,8 @@
 const themeBtn = document.getElementById("theme-btn");
 themeBtn.addEventListener("click", function () {
     const body = document.getElementById("body");
-    const randomNumber = Math.floor(Math.random() * 65535)
-    const randomCode = randomNumber.toString(16);
-    const randomColor = `#${randomCode}`;
+    const randomNumber = Math.floor(Math.random() *256)
+    const randomColor = `rgb(${randomNumber},${randomNumber},${randomNumber})`;
     body.classList.add(`bg-[${randomColor}]`)
 })
 const completeButtons = document.querySelectorAll(".complete-btn");
